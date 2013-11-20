@@ -16,3 +16,37 @@ file=File.open("name of unicode file.txt", "r:bom|utf-16le:windows-1252")
 ```
 
 Hurray!
+
+Examples
+-----------
+
+open an excel unicode file for reading
+
+```ruby
+file=XLUTOWIN.open("filename") # file is now open for reading, and will transcode to windows-1252
+```
+
+same as last example w/ block
+
+```ruby
+XLUTOWIN.open("filename"){|file| ... }
+```
+
+get all lines (as hashes) from excel unicode file, transcoded to win1252
+
+```ruby
+all_lines=XLUTOWIN.each_row(filename)
+puts all_lines[0][:col_header_one]
+puts all_lines[0][:col_header_two]
+...
+```
+
+same as last example, w/ block
+
+```ruby
+XLUTOWIN.each_row(filename) do |row_as_hash|
+       puts row_as_hash[:col_header_one]
+       puts row_as_hash[:col_header_two]
+       ...
+end
+```
