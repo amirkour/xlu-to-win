@@ -17,8 +17,12 @@ file=File.open("name of unicode file.txt", "r:bom|utf-16le:windows-1252")
 
 Hurray!
 
-Examples
+Usage
 -----------
+
+```ruby
+require 'xlutowin'
+```
 
 open an excel unicode file for reading
 
